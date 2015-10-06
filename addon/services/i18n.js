@@ -66,7 +66,7 @@ export default Parent.extend(Evented, {
     if (this.get('locale') == null) {
       var defaultLocale = (ENV.i18n || {}).defaultLocale;
       if (defaultLocale == null) {
-        warn('ember-i18n did not find a default locale; falling back to "en".');
+        warn('ember-i18n did not find a default locale; falling back to "en".', defaultLocale == null, { id: 'ember-i18n.lacks-default-locale' });
         defaultLocale = 'en';
       }
       this.set('locale', defaultLocale);
